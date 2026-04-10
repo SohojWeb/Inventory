@@ -96,7 +96,7 @@ Optional:
 Dark/light mode
 Notifications (low stock alerts)
 📁 Project File Structure
-/config → database connection
+/config → database connection(php myadmin)
 /includes → header, footer, reusable components
 /auth → login, register, logout
 /admin, /manager, /accountant, /viewer → separate dashboards
@@ -104,7 +104,7 @@ Notifications (low stock alerts)
 /uploads → profile images, product images
 🗄 Database Requirements
 
-Provide full SQL schema for:
+Provide full SQL schema for: phpmyadmin database
 
 Users
 Roles
@@ -120,3 +120,6 @@ Include:
 Primary keys & foreign keys
 Proper relationships
 Indexing for performance
+NB: i will do all my code in vs code and for database,
+i will use php myadmin, i have already all setup u just have to 
+give me the all the code and sql schema for new database and table.
