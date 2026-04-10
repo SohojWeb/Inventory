@@ -1,0 +1,22 @@
+Inventory Web App
+1. core php,moblie responsive,html css js,mommon header footer,mordern ui,
+
+2.user: 4 types:admin,manager,accountant,viewer
+admin:can add company details and manage and block users,add logo,name
+manager:product making,user,sell,price edit,
+accountant:customer balance,debit-credit,product price edit,customer create ,accounts can create products,add price 
+
+manager
+       product-price :increase descise +product -in& out
+       customer(TP/DFP) edit,balance=0
+
+viewer: can see only reports.
+
+Modulars/folders:assects[script.js,style.css],config[config.php],include[header,footer],admin,manager,accountant,viewer,login,logout,setup.php,others
+
+special:
+1. if any customer balance has 0 then bill will be draft,if accounts approve it then it will sell,it should be negetive also.
+2.no data will delete 
+3.activity log in a table,user foot print
+4.modular and minimal code
+5.same header footer for all page
