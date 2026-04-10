@@ -1,0 +1,121 @@
+✅ FINAL MODIFIED PROMPT (ENHANCED VERSION)
+
+I want to develop a professional Inventory Management Web Application for a company using:
+
+Backend: Raw PHP (using PDO, modular structure, reusable components like header/footer)
+Frontend: HTML, CSS, JavaScript
+UI Design: Modern, responsive, dashboard-style, clean and fancy looking (with sidebar, cards, charts)
+👥 User Roles (Role-Based Access Control System)
+
+There will be 4 types of users:
+
+🔹 Admin
+Full system control (like company MD)
+Create, update, block/unblock users (Manager, Accountant, Viewer)
+Manage system settings:
+App name
+Logo
+Branding
+Monitor all activities and reports
+View system logs (who did what)
+🔹 Manager
+Manage products:
+Add/edit products (product_id, name, code, category, price, quantity)
+Manage inventory:
+Stock IN / Stock OUT
+Low stock alert system
+Sell products to customers (create transactions/invoices)
+View all customers created by Accountant
+Monitor all previous sales (history)
+Access reports (sales, inventory, performance)
+🔹 Accountant
+Manage customers:
+Add/edit customer (customer_id, name, contact info, balance)
+Maintain customer financial records:
+Credit / Debit balance
+Customer ledger (transaction history)
+Track which customer bought which product
+View customer purchase history
+🔹 Viewer
+Read-only access
+View all reports:
+Daily, weekly, monthly, yearly sales
+View:
+Customer reports
+Product performance
+User activity summaries
+📦 Core System Features
+Inventory Management
+Product management with category system
+Stock tracking (IN / OUT)
+Product status (active/inactive)
+Low stock alert notification
+💰 Sales & Transactions
+Sales system with invoice generation
+Transaction records:
+product_id, customer_id, user_id, quantity, total_amount
+Maintain full sales history
+👤 Customer Management
+Customer table:
+customer_id, name, balance, contact info
+Track customer purchases
+Maintain balance history (ledger system)
+📊 Reporting System
+Sales report:
+Daily / Weekly / Monthly / Yearly
+Product-wise sales report
+Customer-wise report
+Dashboard analytics using charts (Chart.js)
+🔐 Authentication & Security
+Login & registration system
+Password hashing using password_hash()
+Session-based authentication
+Role-based access restriction
+Input validation and sanitization (prevent SQL injection)
+🧾 Activity Logs (Audit System)
+Store all important actions:
+Product added/edited
+Sales made
+Balance updated
+Fields:
+user_id, action, description, timestamp
+♻️ Soft Delete System
+No data will be permanently deleted
+Use:
+is_deleted (boolean)
+deleted_at (timestamp)
+Deleted data will be hidden from frontend but stored in database
+📱 UI/UX Requirements
+Fully responsive (mobile + desktop)
+Modern dashboard layout:
+Sidebar navigation
+Cards (stats)
+Tables (data)
+Optional:
+Dark/light mode
+Notifications (low stock alerts)
+📁 Project File Structure
+/config → database connection
+/includes → header, footer, reusable components
+/auth → login, register, logout
+/admin, /manager, /accountant, /viewer → separate dashboards
+/assets → CSS, JS, images
+/uploads → profile images, product images
+🗄 Database Requirements
+
+Provide full SQL schema for:
+
+Users
+Roles
+Products
+Categories
+Customers
+Transactions
+Customer Ledger
+Logs
+
+Include:
+
+Primary keys & foreign keys
+Proper relationships
+Indexing for performance
