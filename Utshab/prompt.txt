@@ -2,9 +2,10 @@
 
 I want to develop a professional Inventory Management Web Application for a company using:
 
-Backend: Raw PHP (using PDO, modular structure, reusable components like header/footer)
+Backend: core PHP (using PDO, modular structure, reusable components like header/footer)
 Frontend: HTML, CSS, JavaScript
 UI Design: Modern, responsive, dashboard-style, clean and fancy looking (with sidebar, cards, charts)
+mobile responsive.
 👥 User Roles (Role-Based Access Control System)
 
 There will be 4 types of users:
