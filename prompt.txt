@@ -1,22 +1,65 @@
-Inventory Web App
-1. core php,moblie responsive,html css js,mommon header footer,mordern ui,
+Inventory Web App - Detailed Requirements
 
-2.user: 4 types:admin,manager,accountant,viewer
-admin:can add company details and manage and block users,add logo,name
-manager:product making,user,sell,price edit,
-accountant:customer balance,debit-credit,product price edit,customer create ,accounts can create products,add price 
+1. **Technology Stack**:
+   - Core PHP (no frameworks like Laravel).
+   - Mobile-responsive design (use CSS media queries, Bootstrap optional for modern UI).
+   - HTML, CSS, JS (vanilla JS, minimal libraries).
+   - Common header and footer across all pages.
+   - Modern UI (clean, intuitive, professional design).
 
-manager
-       product-price :increase descise +product -in& out
-       customer(TP/DFP) edit,balance=0
+2. **User Roles and Permissions**:
+   - 4 types: admin, manager, accountant, viewer.
+   - **Admin**: Add/edit company details (name, logo, address, tax ID), manage users (create, edit, block/unblock), view all data.
+   - **Manager**: Create/edit products (name, price, stock), manage users (if needed), handle sales (create bills), edit prices, manage inventory (stock in/out), edit customer details (TP/DFP - Trade Price/Distributor Price), set customer balance to 0 if required.
+   - **Accountant**: Manage customer balances (debit/credit transactions), edit product prices, create customers, create products, approve sales bills (from draft to sold), view financial reports.
+   - **Viewer**: Read-only access to reports (sales, inventory, balances, activity logs).
 
-viewer: can see only reports.
+   Notes:
+   - "Product making" = creating new products.
+   - "User" under manager = managing users (create/edit).
+   - "Product-price: increase decrease +product -in&out" = adjust prices up/down, manage stock levels (add/remove inventory).
+   - Permissions overlap where specified (e.g., accountant can create products).
 
-Modulars/folders:assects[script.js,style.css],config[config.php],include[header,footer],admin,manager,accountant,viewer,login,logout,setup.php,others
+3. **Modules/Folders Structure**:
+   - assets/ [script.js, style.css] - Static files.
+   - config/ [config.php] - Database connection.
+   - include/ [header.php, footer.php] - Reusable components.
+   - admin/ - Admin-specific pages.
+   - manager/ - Manager-specific pages.
+   - accountant/ - Accountant-specific pages.
+   - viewer/ - Viewer-specific pages.
+   - login/ - Login page.
+   - logout/ - Logout page.
+   - setup.php - Database setup script.
+   - others/ - Utility files (e.g., helpers, constants).
 
-special:
-1. if any customer balance has 0 then bill will be draft,if accounts approve it then it will sell,it should be negetive also.
-2.no data will delete 
-3.activity log in a table,user foot print
-4.modular and minimal code
-5.same header footer for all page
+4. **Database Schema** (MySQL):
+   - users: id, username, password (hashed), role, status (active/blocked), deleted (0/1), created_at.
+   - products: id, name, price, stock, created_by (user_id), deleted, created_at.
+   - customers: id, name, balance, created_by, deleted, created_at.
+   - transactions: id, customer_id, type (debit/credit), amount, description, created_by, date.
+   - sales: id, product_id, customer_id, quantity, total_price, status (draft/sold), approved_by, created_by, deleted, date.
+   - activity_log: id, user_id, action, timestamp.
+   - company_details: id, name, logo_path, address, etc. (for admin).
+
+5. **Special Requirements**:
+   - Sales Logic: If customer balance == 0, bill starts as 'draft'; accountant approves to change to 'sold'. Balances can be negative (e.g., credit limits).
+   - No Data Deletion: Use 'deleted' flags for soft deletes; archive instead of remove.
+   - Activity Log: Track all user actions (login, edits, sales) in activity_log table for audit trails.
+   - Modular & Minimal Code: Reusable functions, no redundancy, clean structure.
+   - Same Header/Footer: Consistent across pages, with role-based nav.
+
+6. **Additional Details**:
+   - Security: Password hashing (password_hash), input sanitization, session management, CSRF protection.
+   - Authentication: Username/password login, role-based redirects, session timeouts.
+   - UI/UX: Responsive (mobile-first), error messages, loading indicators.
+   - Reports (Viewer): Sales summary, inventory levels, customer balances, activity logs (filterable by date).
+   - Workflow: Manager creates sale -> if balance 0, draft -> accountant approves -> sold.
+   - Data Validation: Prevent negative stock, invalid prices, duplicate usernames.
+   - Performance: Pagination for large lists, efficient queries.
+   - Deployment: XAMPP local, exportable to server.
+
+7. **Assumptions**:
+   - TP/DFP: Trade Price (customer-specific pricing) / Distributor Price (bulk pricing).
+   - Balance: Calculated from transactions (credits - debits); 0 means no credit, draft required.
+   - Default Admin: Create on setup (username: admin, password: admin123).
