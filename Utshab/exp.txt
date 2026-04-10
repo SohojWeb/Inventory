@@ -1,0 +1,30 @@
+I want to make a ‘inventory web app’ with raw php(for backend, common header, footer, with modern ui fancy looking) 
+and html, css, js for frontend.
+There will be 4 types of users-  Admin, Manager, Accounce, Viewers. 
+admin: can monitor all the things as main user,admin will have access to create new user as manager and accounce, 
+can block other user, can manage name(both for main app and user) and logo.
+manager: manager will controll all the things to handle the app, who will add product(p_name, P_id, price, quentity, 
+p_code with edit option), sell product to customer(so manage will see all the customer who is created by accounce ),
+ monitor all previous sold product as draft for different user  
+accounce: accounce officer will crete customer(a table with c_id, name, balance, review customer(previous sold product))
+(who is not any user, but manager will check which customer they sold which product and check customer current balance) 
+just to truck the order. also have the access to transfer balance to customer(as debit credit)
+viewers: who will have the access to see all the report for selleing product to customer(for all customer) in daily,
+weekly or monthly or yearly basis also check other user like manager and accounce. 
+so the thing is user will login just see all the repost for the company who its going as a report for all the section
+ for all manager for all accouce and for all customer.
+Now i am giving u full review that this will be a web app for example it will be for a company where there will be 4 types
+ of user with different login(have to register before login)with id, name, email, email, image, and other thing u may 
+ add if needed basis on my project. then different user will have there different segment as i have said already,
+  The thing is it should be a professional web app for a company who will handle there all the things through this app,
+   where admin will act as a company md, then manager will handle all sufficient things for to sell product and 
+   maintanince customer , all for all the things there will be a report section so that manager can check there all 
+   selling and managing things through this report.
+accounce will handle customer by giving them balance .
+NB: this web app should be must mobile responsive, and all the dot file will be under different section like all
+ login file will be under a seperate file, all css js html will be under assets file, other user will be in
+  others seperate file with sufficients things, and u have to give me all sql for database and table creation.
+   one more things that no data will be delete but there will be delete button if manager or accounce delete 
+   anyting it be delete from frontenf but wont be delete from backend from the database.
+for all seperate user there will be seperate dashboard to controll all the sufficient thing under seperate users.
+and this web app will be with moder ui fancy looking app.
